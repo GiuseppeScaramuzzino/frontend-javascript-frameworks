@@ -9,7 +9,7 @@
          content must come *after* these tags -->
   <title>Ristorante Con Fusion: Menu</title>
   <!-- Bootstrap -->
-  
+
   <link rel="stylesheet" href="styles/main-6955cb7e84.css"/>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,10 +23,13 @@
 <body>
 
   <div class="container">
-    <div class="row row-content" ng-controller="menuController as menuCtrl">
+    <div class="row row-content" ng-controller="MenuController">
       <div class="col-xs-12">
+        <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" type="button">
+          {{showDetails ? 'Hide Details':'Show Details'}}
+        </button>
         <ul class="media-list">
-          <li class="media" ng-repeat="dish in menuCtrl.dishes">
+          <li class="media" ng-repeat="dish in dishes">
             <div class="media-left media-middle">
               <a href="#">
                 <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
@@ -36,7 +39,7 @@
               <h2 class="media-heading">{{dish.name}}
                          <span class="label label-danger">{{dish.label}}</span>
                          <span class="badge">{{dish.price | currency}}</span></h2>
-              <p>{{dish.description}}</p>
+              <p ng-show="showDetails">{{dish.description}}</p>
               <p>Comment: {{dish.comment}}</p>
               <p>Type your comment:
                 <input type="text" ng-model="dish.comment">
@@ -47,8 +50,8 @@
       </div>
     </div>
   </div>
-  <script src="scripts/main-e1417aed0c.js"></script>
-  
+  <script src="scripts/main-f22b94b954.js"></script>
+
 </body>
 
 </html>
