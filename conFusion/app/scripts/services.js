@@ -4,6 +4,7 @@ angular.module('confusionApp')
   .factory('menuFactory', function () {
     var dishes = [
       {
+        _id: 0,
         name: 'Uthapizza',
         image: 'images/uthapizza.png',
         category: 'mains',
@@ -43,6 +44,7 @@ angular.module('confusionApp')
                                }]
                         },
       {
+        _id: 1,
         name: 'Zucchipakoda',
         image: 'images/zucchipakoda.png',
         category: 'appetizer',
@@ -170,7 +172,7 @@ angular.module('confusionApp')
     menufac.getDish = function (index) {
       return dishes[index];
     };
-  
+
     return menufac;
 
   });
