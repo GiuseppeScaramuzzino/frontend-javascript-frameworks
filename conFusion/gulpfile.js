@@ -45,8 +45,8 @@ gulp.task('usemin', ['jshint'], function () {
 
 
 gulp.task('copyview', function () {
-  return gulp.src(['./app/menu.html', './app/dishdetail.html', './app/contactus.html'])
-    .pipe(gulp.dest('dist/'));
+  return gulp.src('./app/views/**/*')
+    .pipe(gulp.dest('dist/views'));
 });
 
 // Images
